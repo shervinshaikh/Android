@@ -1,0 +1,14 @@
+package edu.ucsb.cs.cs185.shervinater.nbascoretracker;
+
+public class DatePickerFragment extends DialogFragment
+		implements DatePickerDialog.OnDataSetListener {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

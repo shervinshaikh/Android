@@ -1,0 +1,30 @@
+package edu.ucsb.cs.cs185.shervinater.nbascoretracker;
+
+import java.util.Locale;
+
+import android.app.DatePickerDialog;
+import android.app.Dialog;
+import android.app.DialogFragment;
+import android.os.Bundle;
+import android.widget.DatePicker;
+import android.widget.TextView;
+
+public class DatePickerFragment extends DialogFragment
+		implements DatePickerDialog.OnDateSetListener {
+
+	@Override
+	public Dialog onCreateDialog(Bundle savedInstanceState){
+		int year = 2013;
+		int month = 3;
+		int day = 17;
+		
+		return new DatePickerDialog(getActivity(), this, year , month, day);
+	}
+	
+	public void onDateSet(DatePicker view, int year, int month, int day){
+		// do something with the date chosen
+		String monthString = getDisplayName(month, Long, Locale.US);
+		final TextView date = (TextView) getActivity().findViewById(R.id.date);
+		date.setText(year + " " + monthString + " " + day);
+	}
+}

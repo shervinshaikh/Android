@@ -1,0 +1,17 @@
+package edu.ucsb.cs.cs185.shervinater.nbascoretracker;
+
+import java.util.Calendar;
+
+import android.app.DialogFragment;
+
+public class DatePickerFragment extends DialogFragment
+		implements DatePickerDialog.OnDataSetListener {
+
+	@Override
+	public Dialog onCreateDialog(Bundle savedInstanceState){
+		final Calendar c = Calendar.getInstance();
+		int year = 2013;
+		int month = 4;
+		int day = 17;
+	}
+}

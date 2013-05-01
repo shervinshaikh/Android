@@ -1,0 +1,5 @@
+package edu.ucsb.cs.cs185.shervinater.nbascoretracker;
+
+public class EnterGameFragment extends DialogFragment {
+
+}

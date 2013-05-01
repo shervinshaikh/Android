@@ -1,0 +1,17 @@
+package edu.ucsb.cs.cs185.shervinater.nbascoretracker;
+
+import android.app.Fragment;
+
+public class EnterGameFragment extends Fragment {
+	
+	@Override
+	public View onCreate(Bundle savedInstanceState){
+		
+		
+	}
+
+	
+	public void onScoresSet(){
+		
+	}
+}

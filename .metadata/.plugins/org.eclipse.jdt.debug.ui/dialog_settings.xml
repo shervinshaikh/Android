@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="org.eclipse.jdt.debug.ui.MAIN_METHOD_SELECTION_DIALOG">
+		<item value="true" key="ShowStatusLine"/>
+		<item value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#x0A;&lt;History&gt;&#x0A;&lt;historyRootNode&gt;&#x0A;&lt;infoNode&gt;=testJdbc/src&amp;lt;{JdbcConnection.java[JdbcConnection&lt;/infoNode&gt;&#x0A;&lt;infoNode&gt;=StarsRUs/src&amp;lt;com.shervinshaikh.starsrus{HelloWorld.java[HelloWorld&lt;/infoNode&gt;&#x0A;&lt;infoNode&gt;=StarsRUs/&amp;lt;com.shervinshaikh.starsrus{Log.java[Log&lt;/infoNode&gt;&#x0A;&lt;infoNode&gt;=StarsRUs/&amp;lt;com.shervinshaikh.starsrus{DataConnection.java[DataConnection&lt;/infoNode&gt;&#x0A;&lt;/historyRootNode&gt;&#x0A;&lt;/History&gt;" key="History"/>
+		<section name="DialogBoundsSettings">
+			<item value="600" key="DIALOG_WIDTH"/>
+			<item value="104" key="DIALOG_Y_ORIGIN"/>
+			<item value="500" key="DIALOG_HEIGHT"/>
+			<item value="420" key="DIALOG_X_ORIGIN"/>
+			<item value="1|Lucida Grande|11.0|0|COCOA|1|LucidaGrande" key="DIALOG_FONT_NAME"/>
+		</section>
+	</section>
+</section>

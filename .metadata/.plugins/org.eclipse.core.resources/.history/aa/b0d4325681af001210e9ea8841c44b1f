@@ -1,0 +1,10 @@
+package edu.ucsb.cs.cs185.shervinater.nbascoretracker;
+
+import android.app.DialogFragment;
+
+public class EnterGameFragment extends DialogFragment {
+	
+	@Override
+	public 
+
+}

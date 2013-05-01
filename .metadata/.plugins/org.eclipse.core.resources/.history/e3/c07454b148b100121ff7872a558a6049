@@ -1,0 +1,108 @@
+package edu.ucsb.cs.cs185.shervinater.nbascoretracker;
+
+import android.app.Activity;
+import android.app.DialogFragment;
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
+
+public class SportScores extends Activity {
+
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_sport_scores);
+	}
+
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		// Inflate the menu; this adds items to the action bar if it is present.
+		getMenuInflater().inflate(R.menu.sport_scores, menu);
+		return true;
+	}
+	
+	public void showDatePickerDialog(View v){
+		DialogFragment date = new DatePickerFragment();
+		date.show(getFragmentManager(), "datePicker");
+	}
+
+	public void showGameFragment(View v){
+		DialogFragment scores = new EnterGameFragment();
+		
+		//FragmentTransaction transaction = getFragmentManager().beginTransaction();
+		//transaction.replace(R.id.fragment_container, scores);
+		//transaction.addToBackStack(null);
+		//transaction.commit();
+		
+		//scores.setArguments(getIntent().getExtras());
+		//getFragmentManager().beginTransaction().add(R.id.fragment_container, scores).commit();
+		
+		//scores.getFragmentManager();
+		//scores.s
+		scores.show(getFragmentManager(), "scorePicker");
+	}
+	
+	public void refresh(View v){
+		Intent intent = getIntent();
+	    finish();
+	    startActivity(intent);
+	}
+	
+	public static class EnterGameFragment extends DialogFragment {
+		
+		@Override
+		public View onCreateView(LayoutInflater inflater, ViewGroup container,
+				Bundle savedInstanceState) {
+			// Inflate the layout for this fragment
+			View view = inflater.inflate(R.layout.fragment_scores, container, false);
+			getDialog().setTitle("Enter Game");
+			
+			final String[] teamNames = getResources().getStringArray(R.array.teams_array);
+	        ArrayAdapter<String> teams = new ArrayAdapter<String>(this.getActivity(),
+	        		android.R.layout.simple_list_item_1, teamNames);
+	        AutoCompleteTextView team1 = (AutoCompleteTextView) getActivity().findViewById(R.id.name1);
+	        //Team1.setThreshold(4);
+	        //team1.setAdapter(teams);
+	        
+	        
+		    Button b = (Button) view.findViewById(R.id.button1);
+		    b.setOnClickListener(new OnClickListener() {
+		                @Override
+		                public void onClick(View v) {
+		                	final AutoCompleteTextView name1 = (AutoCompleteTextView) getView().findViewById(R.id.name1);
+		                	final EditText score1 = (EditText) getView().findViewById(R.id.score1);
+		                	final AutoCompleteTextView name2 = (AutoCompleteTextView) getView().findViewById(R.id.name2);
+		                	final EditText score2 = (EditText) getView().findViewById(R.id.score2);
+		                	// getText().toString();
+		                	
+		                	final TextView sname1 = (TextView) getActivity().findViewById(R.id.team1_name);
+		                	final TextView sscore1 = (TextView) getActivity().findViewById(R.id.team1_score);
+		                	final TextView sname2 = (TextView) getActivity().findViewById(R.id.team2_name);
+		                	final TextView sscore2 = (TextView) getActivity().findViewById(R.id.team2_score);
+		                	
+		                	sname1.setText(name1.getText().toString());
+		                	sscore1.setText(score1.getText().toString());
+		                	sname2.setText(name2.getText().toString());
+		                	sscore2.setText(score2.getText().toString());
+		                	
+//		                	sname1.setText("hello");
+//		                	sscore1.setText("754");
+		                	
+		                    getDialog().dismiss();
+		                }
+		            });
+		    
+		    return view;
+		}
+
+	}
+}
